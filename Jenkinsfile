@@ -1,12 +1,10 @@
-      pipeline {
-          agent any
-          stages {
-              stage('Build') {
-                  steps {
-                      script {
-                          sh 'python hello.py' // Pour Python
-                      }
-                  }
-              }
-          }
-      }
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'python hello.py'
+            }
+        }
+    }
+}
