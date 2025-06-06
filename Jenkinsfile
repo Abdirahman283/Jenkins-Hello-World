@@ -3,7 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'python hello.py'
+                script {
+                    if (isUnix()) {
+                        sh 'python3 hello.py'
+                    } else {
+                        bat 'python hello.py'
+                    }
+                }
             }
         }
     }
